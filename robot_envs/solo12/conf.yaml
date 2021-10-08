@@ -1,0 +1,62 @@
+env_params:
+- entry_point: robot_envs:Solo12
+  env_specific_params:
+    with_motor_rotor: True
+    full_log: True
+    visualize: False
+    sim_timestep: 0.001
+    cont_timestep_mult: 8
+    lateral_friction: 0.5
+    
+    joint_friction: [0.0, 0.1]
+    
+    joint_limits: [[-3.1415, 3.1415], [-3.1415, 3.1415], [-3.1415, 3.1415], [-3.1415, 3.1415], [-3.1415, 3.1415], [-3.1415, 3.1415], [-3.1415, 3.1415],[-3.1415, 3.1415]]
+    termination_conf:
+        imitation_length_termination: {}
+        base_stability_termination:
+          max_angle: 0.2
+        base_impact_termination: {}
+        knee_impact_termination: {}
+    controller_params:
+        type: position_gain
+        variant: ffqqdot
+        qdot_range: [-30.0, 30.0]
+        only_p: True
+        
+        kp: 2.0
+        kd: 0.05
+        
+    
+    reward_specs:
+        trajectory_imitation_reward:
+          traj_file: solo12_jump
+          random_point_init: True
+          k: 4.0
+          
+          joint_pos_rew_k: 0.3
+          joint_vel_rew_k: 0.1
+          base_pos_rew_k: 0.3
+          base_orient_rew_k: 0.1
+          base_vel_rew_k: 0.1
+          base_angvel_rew_k: 0.1
+          
+        torque_smoothness_penalty:
+          k: 0.02
+        trajectory_tracking_reward:
+          squared_penalty: True
+          k: 32.0
+    reward_adaptation_conf:
+      trajectory_tracking_reward:
+        max_k: 32.0
+      max_eps: 150000
+    
+  max_episode_duration: 2.25
+
+alg: ppo_base
+output_dir: '/home/aadhithya/robot_envs_solo12/experiments/'
+training_timesteps: 10.0e+6
+num_hid_layers: 2
+hid_size: 64
+output_tanh: True
+optim_stepsize: 1.0e-4
+seed: 0

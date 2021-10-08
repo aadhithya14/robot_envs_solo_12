@@ -1,0 +1,15 @@
+
+
+
+
+ <!--
+ MuJoCo MJCF test file. See http://mujoco.org/book/index.html
+  -->
+<mujoco>
+   <worldbody>
+      <body name="wall" pos="1.0 1.0 0.0">
+         <inertial mass="0"/>
+         <geom contype="1" friction="0.5 0.5 0.5" type="box" rgba="0.8 0.0 0.0 1" size="0.8 0.01 0.01"/>
+        </body>
+   </worldbody>
+</mujoco>

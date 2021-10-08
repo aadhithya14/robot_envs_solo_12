@@ -1,0 +1,12 @@
+
+ <!--
+ MuJoCo MJCF test file. See http://mujoco.org/book/index.html
+  -->
+<mujoco>
+   <worldbody>
+      <body pos="1.0 -1.0 0">
+         <geom name="sphere_geom_2" size="0.05 0.01" type="cylinder"/>
+         <inertial mass="0.1" diaginertia="1 1 1"/>
+      </body>
+   </worldbody>
+</mujoco>
