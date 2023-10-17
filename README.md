@@ -1,4 +1,4 @@
-# Environment for Solo12
+# Sim2Real RL on Solo12
 
 Environment for learning robust goal conditioned agile locomotion policies on 12DOF quadruped robot Solo12 and Sim2Real transfer to the Real Robot.
 
