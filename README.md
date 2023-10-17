@@ -8,6 +8,8 @@ The learning comprises of multiple stages.
 
 - [x] The next stage involves discarding the demonstration and online learning on top of the base policy learnt using imitation. This stage involves task specific rewards, trajectory tracking reward for ensuring the robustness of the PD controller and torque smoothness penalties for easy transfer to the real robot.
 
+- [x] The third stage involved devising robust Sim2Real transfer approach using careful system identification and domain randomization.  
+
 ### Results on the Real Robot
 
 ![solo12.gif](https://github.com/aadhithya14/robot_envs_solo_12/blob/master/Results/solo12.gif)
