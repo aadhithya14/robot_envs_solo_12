@@ -16,7 +16,7 @@ The learning comprises of multiple stages.
 
 ![solo12.gif](https://github.com/aadhithya14/robot_envs_solo_12/blob/master/Results/solo12.gif)
 
-The resulutant policy was found to be robust to push recovery, independent of initial position and displacement command driven.
+The resulutant policy was found to be robust to push recovery, independent of initial position and displacement command driven. The policy also had very less impact on the knee joints during execution of agile locomotion gait like jumping.
 
 
 
